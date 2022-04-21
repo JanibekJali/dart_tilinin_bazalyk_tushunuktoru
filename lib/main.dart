@@ -39,12 +39,14 @@ String studentNamer = 'Kubat';
 class _MyHomePageState extends State<MyHomePage> {
   String studentName = 'Kubat';
   int studentGrade = 5; // bizdin systemada
-  double studentGrades = 100; // europa systemada
+  double studentGrades = 100.12; // europa systemada
   double studentGradess = 85.60; // europa systemada
 
   int _counter = 0;
   double _ondukSan = 12.5;
   num _enChonSan = 1.5;
+  double scores = 99.9;
+  int score = 4;
 
   List<String> okuuchular = [
     'Jon',
@@ -52,6 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
     'Joni',
     studentNamer,
   ];
+  List<double> sandar = <double>[];
   //Dynamic bolboi tak tak bolush kerek-Ui bulo- tirkeme tes ishteit
   List baalars = [3, 4, 5];
   List<int> baalar = [3, 4, 5];
@@ -61,6 +64,8 @@ class _MyHomePageState extends State<MyHomePage> {
   // List<bool> likes = <bool>[];
 
   void _incrementCounter() {
+    num calcScore = 2.5 + 2.5;
+
     var koshuldu = _counter + _ondukSan;
     // double koshuldu = _counter + _ondukSan;
 
@@ -72,6 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
+
     List<String> okuuchular1 = [
       'Jon',
       'Jack',
@@ -95,6 +101,24 @@ class _MyHomePageState extends State<MyHomePage> {
       5,
       studentGrade,
     ];
+
+    List<double> sandar = <double>[
+      56.25, // 0
+      45.56, // 1
+      studentGradess, // 2
+      78.25
+    ];
+    sandar.add(78.25);
+
+    List<String> names = <String>[
+      'Janibek', // 0
+      'Nurlan', // 1
+      'Erzhan', // 2
+    ];
+    names.add('Kubat');
+    names.removeAt(1);
+
+    log('names.length: ${names}');
     log('okuuchular1 ===> $okuuchular1');
     log('okuuchular ===> ${okuuchular1.length}');
     // log('kiinkiOkuuchular ===> ${okuuchular2[3]}'); - tizmede jok nomerdi berse kata beret
@@ -160,11 +184,6 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.favorite),
       ),
     );
   }
